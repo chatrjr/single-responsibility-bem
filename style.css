@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,900,700italic,200,400italic);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css);
+/**
+ * Single Responsibility BEM: Use your browser's search feature 
+ * to find $METHOD to get started. It uses adjoining classes, 
+ * which I'm well aware do not work in IE6 (that is, if anyone 
+ * is still building for IE6). The downside about the second 
+ * modifier method is that @extend didn't work within media 
+ * queries, last I checked. The first method is still golden.
+ */
+/* Also, if you check the output, you'll see there's no bloat to be found. */
+/* =Grid
+*************************************************************************/
+/* =/Grid
+*************************************************************************/
+/* Custom mixin to define typographic scale
+    Usage: @include scale('l'); 
+*/
+/* =Utility Mixins
+*************************************************************************/
+/* A custom mixin to streamline animations.
+ Usage: @include animation(spin, 1.3s, infinite, ease-in); */
+/* A custom mixin to define animations.
+    Usage: @include animation-frames(spin) {
+        from {
+            color: red;
+        }
+
+        to {
+            color: white;
+        }
+    }
+*/
+/* =/Utility Mixins
+*************************************************************************/
+/* =Media Mixins
+*************************************************************************/
+/* Custom mixin for media queries.
+  Usage: @include flow('small') {
+    .class {
+      background: red;
+    }
+  }
+
+  OR
+
+  .class {
+    background: red;
+    @include mq-flow('small') {
+      background: blue;
+    }
+  } */
+/* =/Media Mixins
+*************************************************************************/
+/* =Pen Styles
+*************************************************************************/
+/* line 205, style.scss */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 211, style.scss */
+body {
+  background: #99d7ff;
+  color: #282828;
+  font-family: "Titillium Web", Helvetica, Verdana, Arial, sans-serif;
+}
+
+/* line 217, style.scss */
+h1 {
+  font-size: 3em;
+  line-height: 1.3125em;
+}
+
+/* line 221, style.scss */
+h2 {
+  font-size: 2.25em;
+  line-height: 1.16667em;
+}
+
+/* line 225, style.scss */
+h3 {
+  font-size: 1.875em;
+  line-height: 1.4em;
+}
+
+/* line 229, style.scss */
+h4 {
+  font-size: 1.5em;
+  line-height: 1.75em;
+}
+
+/* line 233, style.scss */
+img {
+  width: 100%;
+}
+
+/* line 237, style.scss */
+.container {
+  margin: 0 auto;
+  max-width: 80em;
+}
+
+/* line 243, style.scss */
+.intro,
+.outro {
+  font-size: 1.875em;
+  line-height: 1.4em;
+  float: left;
+  margin-right: 0;
+  max-width: 80em;
+  clear: both;
+}
+
+/* line 249, style.scss */
+.hero {
+  float: left;
+  margin-right: 0;
+  max-width: 80em;
+}
+
+/* line 262, style.scss */
+.info {
+  float: left;
+  margin-right: 0;
+  max-width: 80em;
+}
+
+/* line 266, style.scss */
+.positives {
+  float: left;
+  margin-right: 1em;
+  width: 39em;
+}
+
+/* line 276, style.scss */
+.negatives {
+  float: left;
+  margin-right: 1em;
+  width: 39em;
+  margin-right: 0;
+}
+
+/* line 287, style.scss */
+.examples {
+  float: left;
+  margin-right: 1em;
+  width: 25.66667em;
+  display: inline-block;
+  clear: right;
+}
+
+/* =/Pen Styles
+*************************************************************************/
+/* =Augments
+*************************************************************************/
+/* =/Augments
+*************************************************************************/

@@ -1,0 +1,303 @@
+/**
+ * Single Responsibility BEM: Use your browser's search feature 
+ * to find $METHOD to get started. It uses adjoining classes, 
+ * which I'm well aware do not work in IE6 (that is, if anyone 
+ * is still building for IE6). The downside about the second 
+ * modifier method is that @extend didn't work within media 
+ * queries, last I checked. The first method is still golden.
+ */
+
+/* Also, if you check the output, you'll see there's no bloat to be found. */
+@import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,900,700italic,200,400italic);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css);
+@import "compass";
+
+
+/* =Grid
+*************************************************************************/
+
+$max-width: 80em;
+$max-columns: 12;
+$column: 8em;
+$gutter: 1em;
+
+
+@mixin griddler($columns) {
+  @if $columns == 12 {
+    float: left;
+    margin-right: 0;
+    max-width: $max-width;
+  } @else {
+    float: left;
+    margin-right: $gutter; 
+    width: ($max-width / $max-columns) * $columns - $gutter;
+  }
+}
+
+
+/* =/Grid
+*************************************************************************/
+
+
+// =Typography
+// *************************************************************************/
+
+$primary: "Titillium Web", Helvetica, Verdana, Arial, sans-serif;
+
+// Compass vertical rhythm
+$base-font-size: 16px;
+$base-line-height: 21px;
+
+/* Custom mixin to define typographic scale
+    Usage: @include scale('l'); 
+*/
+@mixin scale($font) {
+  @if $font == 'ginormous' {
+    @include adjust-font-size-to(60px);
+  }
+  @if $font == 'xxl' {
+    @include adjust-font-size-to(48px);
+  }
+  @if $font == 'xl' {
+    @include adjust-font-size-to(36px);
+  }
+  
+  @if $font == 'l' {
+    @include adjust-font-size-to(30px);
+  }
+
+  @if $font == 'm' {
+    @include adjust-font-size-to(24px);
+  }
+
+  @if $font == 's' {
+    @include adjust-font-size-to(21px);
+  }
+
+  @if $font == 'xs' {
+    @include adjust-font-size-to(18px);
+  }
+}
+
+// =/Typography
+// *************************************************************************/
+
+ /* =Utility Mixins
+ *************************************************************************/
+
+/* A custom mixin to streamline animations.
+ Usage: @include animation(spin, 1.3s, infinite, ease-in); */
+
+@mixin animation($handle, $duration, $method, $time: infinite) {
+    -moz-animation: $handle $duration $time $method;
+    -o-animation: $handle $duration $time $method;
+    -webkit-animation: $handle $duration $time $method;
+    animation: $handle $duration $time $method;
+}
+/* A custom mixin to define animations.
+    Usage: @include animation-frames(spin) {
+        from {
+            color: red;
+        }
+
+        to {
+            color: white;
+        }
+    }
+*/
+@mixin animation-frames($name) {
+    @-moz-keyframes $name {
+        @content;
+    }
+
+    @-webkit-keyframes $name {
+        @content;
+    }
+
+    @-o-keyframes $name {
+        @content;
+    }
+
+    @-ms-keyframes $name {
+        @content;
+    }
+
+    @keyframes $name {
+        @content;
+    }
+}
+
+  
+/* =/Utility Mixins
+*************************************************************************/
+
+// /* =Palette
+// *************************************************************************/
+  
+$ocean-blue: rgba(0, 112, 255, 1);
+$ocean-blue-dark: darken($ocean-blue, 13);
+$aqua: rgba(0, 214, 255, 1);
+$sky-blue: rgba(0, 155, 255, 1);
+$sky-blue-dark: darken($sky-blue, 40);
+$lime: rgba(138, 255, 0, 1);
+$lime-light: lighten($lime, 16);
+$white: rgba(255, 255, 255, 1);
+$white-translucent: rgba($white, 0.6);
+$grey: rgba(40, 40, 40, 1);
+  
+// /* =/Palette
+// *************************************************************************/
+
+/* =Media Mixins
+*************************************************************************/
+/* Custom mixin for media queries.
+  Usage: @include flow('small') {
+    .class {
+      background: red;
+    }
+  }
+
+  OR
+
+  .class {
+    background: red;
+    @include mq-flow('small') {
+      background: blue;
+    }
+  } */
+@mixin mq-flow($state) {
+  @if $state == 'small' {
+    @media screen and (max-width: 30em) {
+      @content;
+    }
+  }
+  @if $state == 'medium' {
+    @media screen and (max-width: 45em) {
+      @content;
+    }
+  }
+  @if $state == 'large' {
+    @media screen and (max-width: 60em) {
+      @content;
+    }
+  }
+  @if $state == 'super' {
+    @media screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if $state == 'massive' {
+    @media screen and (max-width: 90em) {
+      @content;
+    }
+  }
+}
+
+
+/* =/Media Mixins
+*************************************************************************/
+
+/* =Pen Styles
+*************************************************************************/
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: lighten($sky-blue, 30);
+  color: $grey;
+  font-family: $primary;
+}
+
+h1 {
+  @include scale('xxl');
+}
+
+h2 {
+  @include scale('xl');
+}
+
+h3 {
+  @include scale('l');
+}
+
+h4 {
+  @include scale('m');
+}
+
+img {
+  width: 100%
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $max-width;
+}
+
+.intro,
+.outro {
+  @include scale(l);
+  @include griddler(12);
+  clear: both;
+}
+
+.hero {
+  @include griddler(12);
+  .image {
+    
+  }
+
+  .__pitch {
+  }
+
+  .__button {
+  }
+}
+
+.info {
+  @include griddler(12);
+}
+
+.positives {
+  @include griddler(6);
+  .__title {
+
+  }
+  .__list {
+
+  }
+}
+
+.negatives {
+  @include griddler(6);
+  margin-right: 0;
+  .__title {
+
+  }
+  .__list {
+
+  }
+}
+
+.examples {
+  @include griddler(4);
+  display: inline-block;
+  clear: right;
+  .__title {
+    
+  }
+}
+
+/* =/Pen Styles
+*************************************************************************/
+
+/* =Augments
+*************************************************************************/
+
+/* =/Augments
+*************************************************************************/
