@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <h1 class="pen-title">Single Responsibility BEM: 2nd Pen</h1>
-    <p class="intro">This is a fork of Single Responsibility BEM applied in a practical sense. It's a more polished example than the original pen, which was more like a quick and dirty exploration of its concepts. I'll be writing up a post to explain in detail. I'm hoping it will spark conversation. The gist of this approach is the value in designing from components and embracing systems for more cohesive, maintainable results.</p>
+    <p class="intro">This is a fork of Single Responsibility BEM applied in a practical sense. It's a more polished example than the original pen, which was more like a quick and dirty exploration of its concepts. I put up the code and explanation on Github. I'm hoping it will spark conversation. The gist of this approach is the value in designing from components and embracing systems for more cohesive, maintainable results.</p>
     <div class="hero">
       <h2 class="__pitch">Single Responsibility BEM is a Different Approach to BEM</h2>
     </div>
@@ -31,28 +31,47 @@
       </div>
     </div>
     <div class="examples">
-      <h3 class="__title">Example 1: Button</h3>
+      <h3 class="__title">Example 1: Augmenting Elements</h3>
       <a href="#" class="__button augment-animatePulse">I'm a Button &raquo;</a>
       <a href="#" class="__button augment-animatePulse">I'm a Button &raquo;</a>
       <a href="#" class="__button augment-animateRave">I'm a Button &raquo;</a>
       <a href="#" class="__button augment-animateRave">I'm a Button &raquo;</a>
     </div>
     <div class="examples">
-      <h3 class="__title">Example 2: Form</h3>
+      <h3 class="__title">Example 2: Augmenting a Block</h3>
+      <form class="contact" id="ex1" action="">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" class="__field augment-transitionFocus">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="__field augment-transitionFocus">
+        <label for="url">Website</label>
+        <input type="url"  name="url" id="url" class="__field augment-transitionFocus">
+        <label for="message">What's your message?</label>
+        <textarea name="message" id="message" class="__field augment-transitionFocus" cols="30" rows="5"></textarea>
+        <input type="submit" value="Go!" class="__button augment-animateRave">
+      </form>
+      <form class="contact augment-themeInvert" id="ex2" action="">
+        <label for="name2">Name</label>
+        <input type="text" name="name2" id="name2" class="__field augment-transitionFocus">
+        <label for="email2">Email</label>
+        <input type="email" name="email2" id="email2" class="__field augment-transitionFocus">
+        <label for="url2">Website</label>
+        <input type="url"  name="url2" id="url2" class="__field augment-transitionFocus">
+        <label for="message2">What's your message?</label>
+        <textarea name="message2" id="message2" class="__field augment-transitionFocus" cols="30" rows="5"></textarea>
+        <input type="submit" value="Go!" class="__button augment-animatePulse">
+      </form>
     </div>
     <div class="examples">
-      <h3 class="__title">Example 3: Login</h3>
+      <h3 class="__title">Example 3: Augmenting and Media Queries</h3>
+      <div class="block">Initial block.</div>
+      <div class="block augment-stateMQ">At breakpoint "small", blocks invert</div>
+      <div class="block augment-stateMQ">At breakpoint "medium", blocks have box-shadow</div>
+      <div class="block augment-stateMQ">At breakpoint "large", blocks will be gold.</div>
+      <div class="block augment-stateMQ">At breakpoint "super", blocks will have rounded corners.</div>
+      <div class="block augment-stateMQ">At breakpoint "massive", blocks have bigger, bolder text;</div>
     </div>
-    <div class="examples">
-      <h3 class="__title">Example 4: Nav Bar</h3>
-    </div>
-    <div class="examples">
-      <h3 class="__title">Example 5: Definition List</h3>
-    </div>
-    <div class="examples">
-      <h3 class="__title">Example 6: Comment Form</h3>
-    </div>
-    <p class="outro">There you have it. Be sure to check out the Sass and markup, and if you like this approach, feel free to use it.</p>
+    <p class="outro">There you have it. Be sure to check out the Sass and markup, and if you like this approach, feel free to use it. And please fork the hell out of this, because there's no way I covered everything that's possible through augmentation.</p>
   </div>
 </body>
 </html>

@@ -150,22 +150,22 @@ $grey: rgba(40, 40, 40, 1);
     }
   }
   @if $state == 'medium' {
-    @media screen and (max-width: 45em) {
+    @media screen and (min-width: 30.5em) and (max-width: 50em) {
       @content;
     }
   }
   @if $state == 'large' {
-    @media screen and (max-width: 60em) {
+    @media screen and (min-width: 50.5em) and (max-width: 70em) {
       @content;
     }
   }
   @if $state == 'super' {
-    @media screen and (max-width: 75em) {
+    @media screen and (min-width: 70.5em) and (max-width: 90em) {
       @content;
     }
   }
   @if $state == 'massive' {
-    @media screen and (max-width: 90em) {
+    @media screen and (min-width: 90.5em) {
       @content;
     }
   }
@@ -293,6 +293,45 @@ img {
   }
 }
 
+.contact {
+  @extend %_--inverseForm;
+  float: left;
+  width: 48%;
+  label, .__field {
+    display: block;
+  }
+
+  label {
+    font-weight: 700;
+    margin: 0.3em 0;
+  }
+
+  .__field {
+    border: 2px solid $ocean-blue-dark;
+    color: $grey;
+    padding: 0.2em;
+    &:focus {
+      @extend %_--focus;
+    }
+  }
+
+  .__button {
+    border: none;
+    display: block;
+  }
+}
+
+.block {
+  @extend %_--shiftBlock;
+  @include scale(l);
+  background: $ocean-blue-dark;
+  color: $white;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+
 /* =/Pen Styles
 *************************************************************************/
 
@@ -300,8 +339,37 @@ img {
 *************************************************************************/
 
 /**
- * Augment classes: state, animate, transition.
+ * Augment classes: layout, state, theme, animate, transition.
  */
+
+.augment-stateMQ%_--shiftBlock {
+  @include mq-flow('small') {
+    /* Referencing %_--shiftBlock */
+    background: $white;
+    color: $ocean-blue-dark;
+  }
+  @include mq-flow('medium') {
+    /* Referencing %_--shiftBlock */
+    box-shadow: 2px 3px 3px $grey;
+  }
+
+  @include mq-flow('large') {
+    /* Referencing %_--shiftBlock */
+    background: gold;
+    color: $grey;
+  }
+
+  @include mq-flow('super') {
+    /* Referencing %_--shiftBlock */
+    border-radius: 1.5em;
+  }
+
+  @include mq-flow('massive') {
+    /* Referencing %_--shiftBlock */
+    @include scale(xl);
+    font-weight: 700;
+  }
+}
 
 .augment-statePositive%_--positiveIcon {
   /* referencing %_--positiveIcon */
@@ -311,6 +379,24 @@ img {
 .augment-stateNegative%_--negativeIcon {
   /* referencing %_--negativeIcon */
   color: red;
+}
+
+.augment-themeInvert%_--inverseForm {
+  /* referencing %_--inverseForm */
+  background: $ocean-blue-dark;
+  border-radius: 0.5em;
+  padding: 0.2em;
+  label {
+    color: $white;
+  }
+  .__field {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+  .__button {
+    background: $white;
+    border-radius: 0 0 0 0.3em;
+    color: $ocean-blue-dark;
+  }
 }
 
 .augment-animatePulse%_--pulse {
@@ -329,7 +415,6 @@ img {
   background: $white;
   border: 1px solid darken($ocean-blue-dark, 10);
   border-left: 8px solid darken($ocean-blue-dark, 10);
-  color: $ocean-blue-dark;
 }
 
 @include animation-frames(pulse) {
