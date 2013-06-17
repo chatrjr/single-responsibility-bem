@@ -9,10 +9,6 @@
  * queries, last I checked. The first method is still golden.
  */
 /* Also, if you check the output, you'll see there's no bloat to be found. */
-/* =Grid
-*************************************************************************/
-/* =/Grid
-*************************************************************************/
 /* Custom mixin to define typographic scale
     Usage: @include scale('l'); 
 */
@@ -54,7 +50,7 @@
 *************************************************************************/
 /* =Pen Styles
 *************************************************************************/
-/* line 205, style.scss */
+/* line 183, style.scss */
 *,
 *:before,
 *:after {
@@ -63,100 +59,141 @@
   box-sizing: border-box;
 }
 
-/* line 211, style.scss */
+/* line 189, style.scss */
 body {
   background: #99d7ff;
   color: #282828;
   font-family: "Titillium Web", Helvetica, Verdana, Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 80em;
 }
 
-/* line 217, style.scss */
+/* line 197, style.scss */
 h1 {
   font-size: 3em;
   line-height: 1.3125em;
 }
 
-/* line 221, style.scss */
+/* line 201, style.scss */
 h2 {
   font-size: 2.25em;
   line-height: 1.16667em;
 }
 
-/* line 225, style.scss */
+/* line 205, style.scss */
 h3 {
   font-size: 1.875em;
   line-height: 1.4em;
 }
 
-/* line 229, style.scss */
+/* line 209, style.scss */
 h4 {
   font-size: 1.5em;
   line-height: 1.75em;
 }
 
-/* line 233, style.scss */
+/* line 213, style.scss */
 img {
   width: 100%;
 }
 
-/* line 237, style.scss */
+/* line 217, style.scss */
 .container {
   margin: 0 auto;
   max-width: 80em;
+  padding: 0 1em;
 }
 
-/* line 243, style.scss */
+/* line 224, style.scss */
 .intro,
 .outro {
   font-size: 1.875em;
   line-height: 1.4em;
-  float: left;
-  margin-right: 0;
-  max-width: 80em;
   clear: both;
 }
 
-/* line 249, style.scss */
+/* line 229, style.scss */
 .hero {
-  float: left;
-  margin-right: 0;
-  max-width: 80em;
+  position: relative;
+}
+/* line 232, style.scss */
+.hero .__pitch {
+  background: #0053bd;
+  color: white;
+  padding: 0.4em;
+  width: 20em;
 }
 
-/* line 262, style.scss */
+/* line 240, style.scss */
 .info {
-  float: left;
-  margin-right: 0;
-  max-width: 80em;
+  width: 100%;
 }
 
-/* line 266, style.scss */
-.positives {
-  float: left;
-  margin-right: 1em;
-  width: 39em;
-}
-
-/* line 276, style.scss */
-.negatives {
-  float: left;
-  margin-right: 1em;
-  width: 39em;
-  margin-right: 0;
-}
-
-/* line 287, style.scss */
-.examples {
-  float: left;
-  margin-right: 1em;
-  width: 25.66667em;
+/* line 244, style.scss */
+.attributes {
   display: inline-block;
-  clear: right;
+  margin-right: 1%;
+  width: 49%;
+}
+/* line 248, style.scss */
+.attributes:nth-child(2n) {
+  margin-right: 0;
+}
+/* line 254, style.scss */
+.attributes .__list {
+  list-style: none;
+  padding: 0;
+}
+/* line 257, style.scss */
+.attributes .__list .__icon {
+  margin-right: 0.5em;
+}
+
+/* line 265, style.scss */
+.examples {
+  background: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1em;
+  padding: 0.5em;
+}
+/* line 269, style.scss */
+.examples:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* line 274, style.scss */
+.examples .__title {
+  margin-top: 0;
+}
+/* line 278, style.scss */
+.examples .__button {
+  background: #0053bd;
+  color: white;
+  float: left;
+  font-weight: 600;
+  margin: 0.3em;
+  padding: 0.8em;
+  text-decoration: none;
 }
 
 /* =/Pen Styles
 *************************************************************************/
 /* =Augments
 *************************************************************************/
+/**
+ * Augment classes: alpha, beta.
+ */
+/* line 299, style.scss */
+.attributes .__list .augment-alpha.__icon {
+  /* referencing %_--positiveIcon */
+  color: green;
+}
+
+/* line 304, style.scss */
+.attributes .__list .augment-beta.__icon {
+  /* referencing %_--negativeIcon */
+  color: red;
+}
+
 /* =/Augments
 *************************************************************************/

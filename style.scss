@@ -13,30 +13,8 @@
 @import "compass";
 
 
-/* =Grid
-*************************************************************************/
-
 $max-width: 80em;
-$max-columns: 12;
-$column: 8em;
-$gutter: 1em;
 
-
-@mixin griddler($columns) {
-  @if $columns == 12 {
-    float: left;
-    margin-right: 0;
-    max-width: $max-width;
-  } @else {
-    float: left;
-    margin-right: $gutter; 
-    width: ($max-width / $max-columns) * $columns - $gutter;
-  }
-}
-
-
-/* =/Grid
-*************************************************************************/
 
 
 // =Typography
@@ -212,6 +190,8 @@ body {
   background: lighten($sky-blue, 30);
   color: $grey;
   font-family: $primary;
+  margin: 0 auto;
+  max-width: $max-width;
 }
 
 h1 {
@@ -237,59 +217,72 @@ img {
 .container {
   margin: 0 auto;
   max-width: $max-width;
+  padding: 0 1em;
 }
 
 .intro,
 .outro {
   @include scale(l);
-  @include griddler(12);
   clear: both;
 }
 
 .hero {
-  @include griddler(12);
-  .image {
-    
-  }
+  position: relative;
 
   .__pitch {
-  }
-
-  .__button {
+    background: $ocean-blue-dark;
+    color: $white;
+    padding: 0.4em;
+    width: 20em;
   }
 }
 
 .info {
-  @include griddler(12);
+  width: 100%;
 }
 
-.positives {
-  @include griddler(6);
+.attributes {
+  display: inline-block;
+  margin-right: 1%;
+  width: 49%;
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
   .__title {
-
+    
   }
   .__list {
-
-  }
-}
-
-.negatives {
-  @include griddler(6);
-  margin-right: 0;
-  .__title {
-
-  }
-  .__list {
-
+    list-style: none;
+    padding: 0;
+    .__icon {
+      @extend %_--positiveIcon;
+      @extend %_--negativeIcon;
+      margin-right: 0.5em;
+    }
   }
 }
 
 .examples {
-  @include griddler(4);
-  display: inline-block;
-  clear: right;
+  background: $white-translucent;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  &:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
   .__title {
-    
+    margin-top: 0;
+  }
+
+  .__button {
+    background: $ocean-blue-dark;
+    color: $white;
+    float: left;
+    font-weight: 600;
+    margin: 0.3em;
+    padding: 0.8em;
+    text-decoration: none;
   }
 }
 
@@ -299,5 +292,18 @@ img {
 /* =Augments
 *************************************************************************/
 
+/**
+ * Augment classes: alpha, beta.
+ */
+
+.augment-alpha%_--positiveIcon {
+  /* referencing %_--positiveIcon */
+  color: green;
+}
+
+.augment-beta%_--negativeIcon {
+  /* referencing %_--negativeIcon */
+  color: red;
+}
 /* =/Augments
 *************************************************************************/
