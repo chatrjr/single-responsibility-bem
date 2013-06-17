@@ -15,7 +15,7 @@
 /* =Utility Mixins
 *************************************************************************/
 /* A custom mixin to streamline animations.
- Usage: @include animation(spin, 1.3s, infinite, ease-in); */
+ Usage: @include animation(spin 1.3s infinite ease-in); */
 /* A custom mixin to define animations.
     Usage: @include animation-frames(spin) {
         from {
@@ -152,20 +152,22 @@ img {
 /* line 265, style.scss */
 .examples {
   background: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 3px #2973a3;
   margin-bottom: 1em;
   padding: 0.5em;
 }
-/* line 269, style.scss */
+/* line 271, style.scss */
 .examples:after {
   content: "";
   clear: both;
   display: table;
 }
-/* line 274, style.scss */
+/* line 276, style.scss */
 .examples .__title {
   margin-top: 0;
 }
-/* line 278, style.scss */
+/* line 280, style.scss */
 .examples .__button {
   background: #0053bd;
   color: white;
@@ -181,18 +183,256 @@ img {
 /* =Augments
 *************************************************************************/
 /**
- * Augment classes: alpha, beta.
+ * Augment classes: state, animate, transition.
  */
-/* line 299, style.scss */
-.attributes .__list .augment-alpha.__icon {
+/* line 306, style.scss */
+.attributes .__list .augment-statePositive.__icon {
   /* referencing %_--positiveIcon */
   color: green;
 }
 
-/* line 304, style.scss */
-.attributes .__list .augment-beta.__icon {
+/* line 311, style.scss */
+.attributes .__list .augment-stateNegative.__icon {
   /* referencing %_--negativeIcon */
   color: red;
+}
+
+/* line 316, style.scss */
+.examples .augment-animatePulse.__button:hover, .examples .augment-animatePulse.__button:focus {
+  /* Referencing %_--pulse */
+  -moz-animation: pulse 0.8s infinite ease-out;
+  -o-animation: pulse 0.8s infinite ease-out;
+  -webkit-animation: pulse 0.8s infinite ease-out;
+  animation: pulse 0.8s infinite ease-out;
+}
+
+/* line 321, style.scss */
+.examples .augment-animateRave.__button:hover, .examples .augment-animateRave.__button:focus {
+  /* Referencing %_--rave */
+  -moz-animation: rave 0.5s infinite ease-in;
+  -o-animation: rave 0.5s infinite ease-in;
+  -webkit-animation: rave 0.5s infinite ease-in;
+  animation: rave 0.5s infinite ease-in;
+}
+
+@-moz-keyframes pulse {
+  /* line 336, style.scss */
+  0% {
+    padding: 0.8em;
+  }
+
+  /* line 340, style.scss */
+  50% {
+    padding: 0.85em;
+  }
+
+  /* line 344, style.scss */
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@-webkit-keyframes pulse {
+  /* line 336, style.scss */
+  0% {
+    padding: 0.8em;
+  }
+
+  /* line 340, style.scss */
+  50% {
+    padding: 0.85em;
+  }
+
+  /* line 344, style.scss */
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@-o-keyframes pulse {
+  /* line 336, style.scss */
+  0% {
+    padding: 0.8em;
+  }
+
+  /* line 340, style.scss */
+  50% {
+    padding: 0.85em;
+  }
+
+  /* line 344, style.scss */
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@-ms-keyframes pulse {
+  /* line 336, style.scss */
+  0% {
+    padding: 0.8em;
+  }
+
+  /* line 340, style.scss */
+  50% {
+    padding: 0.85em;
+  }
+
+  /* line 344, style.scss */
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@keyframes pulse {
+  /* line 336, style.scss */
+  0% {
+    padding: 0.8em;
+  }
+
+  /* line 340, style.scss */
+  50% {
+    padding: 0.85em;
+  }
+
+  /* line 344, style.scss */
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@-moz-keyframes rave {
+  /* line 350, style.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 353, style.scss */
+  25% {
+    background: orange;
+  }
+
+  /* line 356, style.scss */
+  50% {
+    background: yellow;
+  }
+
+  /* line 359, style.scss */
+  75% {
+    background: green;
+  }
+
+  /* line 362, style.scss */
+  100% {
+    background: blue;
+  }
+}
+
+@-webkit-keyframes rave {
+  /* line 350, style.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 353, style.scss */
+  25% {
+    background: orange;
+  }
+
+  /* line 356, style.scss */
+  50% {
+    background: yellow;
+  }
+
+  /* line 359, style.scss */
+  75% {
+    background: green;
+  }
+
+  /* line 362, style.scss */
+  100% {
+    background: blue;
+  }
+}
+
+@-o-keyframes rave {
+  /* line 350, style.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 353, style.scss */
+  25% {
+    background: orange;
+  }
+
+  /* line 356, style.scss */
+  50% {
+    background: yellow;
+  }
+
+  /* line 359, style.scss */
+  75% {
+    background: green;
+  }
+
+  /* line 362, style.scss */
+  100% {
+    background: blue;
+  }
+}
+
+@-ms-keyframes rave {
+  /* line 350, style.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 353, style.scss */
+  25% {
+    background: orange;
+  }
+
+  /* line 356, style.scss */
+  50% {
+    background: yellow;
+  }
+
+  /* line 359, style.scss */
+  75% {
+    background: green;
+  }
+
+  /* line 362, style.scss */
+  100% {
+    background: blue;
+  }
+}
+
+@keyframes rave {
+  /* line 350, style.scss */
+  0% {
+    background: red;
+  }
+
+  /* line 353, style.scss */
+  25% {
+    background: orange;
+  }
+
+  /* line 356, style.scss */
+  50% {
+    background: yellow;
+  }
+
+  /* line 359, style.scss */
+  75% {
+    background: green;
+  }
+
+  /* line 362, style.scss */
+  100% {
+    background: blue;
+  }
 }
 
 /* =/Augments

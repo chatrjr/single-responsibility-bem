@@ -8,7 +8,7 @@
 <body>
   <div class="container">
     <h1 class="pen-title">Single Responsibility BEM: 2nd Pen</h1>
-    <p class="intro">This is a fork of Single Responsibility BEM applied in a practical sense. It's a more polished example than the original pen, which was more like a quick and dirty exploration of its concepts. I'll be writing up a post to explain in detail. I'm hoping it will be a boon to solo developers and teams, or at least spark conversation.</p>
+    <p class="intro">This is a fork of Single Responsibility BEM applied in a practical sense. It's a more polished example than the original pen, which was more like a quick and dirty exploration of its concepts. I'll be writing up a post to explain in detail. I'm hoping it will spark conversation. The gist of this approach is the value in designing from components and embracing systems for more cohesive, maintainable results.</p>
     <div class="hero">
       <h2 class="__pitch">Single Responsibility BEM is a Different Approach to BEM</h2>
     </div>
@@ -16,26 +16,26 @@
       <div class="attributes">
         <h2 class="__title">Pros</h2>
         <ul class="__list">
-          <li><i class="icon-plus-sign __icon augment-alpha"></i>Encourages building out from components.</li>
-          <li><i class="icon-plus-sign __icon augment-alpha"></i>Keeps modules in their own scope to be moved around.</li>
-          <li><i class="icon-plus-sign __icon augment-alpha"></i>A single, extendable <code>.augment</code> &ldquo;namespace&rdquo; class to build out modifiers.</li>
+          <li><i class="icon-plus-sign __icon augment-statePositive"></i>Encourages building out from components.</li>
+          <li><i class="icon-plus-sign __icon augment-statePositive"></i>Keeps modules in their own scope to be moved around.</li>
+          <li><i class="icon-plus-sign __icon augment-statePositive"></i>A single, extendable <code>.augment</code> &ldquo;namespace&rdquo; class to build out modifiers.</li>
         </ul>
       </div>
       <div class="attributes">
         <h2 class="__title">Cons</h2>
         <ul class="__list">
-          <li><i class="icon-minus-sign __icon augment-beta"></i>Pretty much requires Sass.</li>
-          <li><i class="icon-minus-sign __icon augment-beta"></i>Adjoining classes aren't supported in IE6.</li>
+          <li><i class="icon-minus-sign __icon augment-stateNegative"></i>Pretty much requires Sass.</li>
+          <li><i class="icon-minus-sign __icon augment-stateNegative"></i>Adjoining classes aren't supported in IE6.</li>
           <li><i class="icon-minus-sign __icon"></i>May require a shift in thought.</li>
         </ul>
       </div>
     </div>
     <div class="examples">
       <h3 class="__title">Example 1: Button</h3>
-      <a href="#" class="__button">I'm a Button &raquo;</a>
-      <a href="#" class="__button">I'm a Button &raquo;</a>
-      <a href="#" class="__button">I'm a Button &raquo;</a>
-      <a href="#" class="__button">I'm a Button &raquo;</a>
+      <a href="#" class="__button augment-animatePulse">I'm a Button &raquo;</a>
+      <a href="#" class="__button augment-animatePulse">I'm a Button &raquo;</a>
+      <a href="#" class="__button augment-animateRave">I'm a Button &raquo;</a>
+      <a href="#" class="__button augment-animateRave">I'm a Button &raquo;</a>
     </div>
     <div class="examples">
       <h3 class="__title">Example 2: Form</h3>

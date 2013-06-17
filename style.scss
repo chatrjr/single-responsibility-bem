@@ -64,13 +64,13 @@ $base-line-height: 21px;
  *************************************************************************/
 
 /* A custom mixin to streamline animations.
- Usage: @include animation(spin, 1.3s, infinite, ease-in); */
+ Usage: @include animation(spin 1.3s infinite ease-in); */
 
-@mixin animation($handle, $duration, $method, $time: infinite) {
-    -moz-animation: $handle $duration $time $method;
-    -o-animation: $handle $duration $time $method;
-    -webkit-animation: $handle $duration $time $method;
-    animation: $handle $duration $time $method;
+@mixin animation($args) {
+    -moz-animation: $args;
+    -o-animation: $args;
+    -webkit-animation: $args;
+    animation: $args;
 }
 /* A custom mixin to define animations.
     Usage: @include animation-frames(spin) {
@@ -264,6 +264,8 @@ img {
 
 .examples {
   background: $white-translucent;
+  border-radius: 0.5em;
+  box-shadow: 2px 2px 3px desaturate(darken($sky-blue, 10), 40);
   margin-bottom: 1em;
   padding: 0.5em;
   &:after {
@@ -283,6 +285,11 @@ img {
     margin: 0.3em;
     padding: 0.8em;
     text-decoration: none;
+    &:hover,
+    &:focus {
+      @extend %_--pulse;
+      @extend %_--rave;
+    }
   }
 }
 
@@ -293,17 +300,68 @@ img {
 *************************************************************************/
 
 /**
- * Augment classes: alpha, beta.
+ * Augment classes: state, animate, transition.
  */
 
-.augment-alpha%_--positiveIcon {
+.augment-statePositive%_--positiveIcon {
   /* referencing %_--positiveIcon */
   color: green;
 }
 
-.augment-beta%_--negativeIcon {
+.augment-stateNegative%_--negativeIcon {
   /* referencing %_--negativeIcon */
   color: red;
+}
+
+.augment-animatePulse%_--pulse {
+  /* Referencing %_--pulse */
+  @include animation(pulse 0.8s infinite ease-out);
+}
+
+.augment-animateRave%_--rave {
+  /* Referencing %_--rave */
+  @include animation(rave 0.5s infinite ease-in);
+}
+
+.augment-transitionFocus%_--focus {
+  /* Referencing %_--focus */
+  @include transition(all 0.4s linear);
+  background: $white;
+  border: 1px solid darken($ocean-blue-dark, 10);
+  border-left: 8px solid darken($ocean-blue-dark, 10);
+  color: $ocean-blue-dark;
+}
+
+@include animation-frames(pulse) {
+  0% {
+    padding: 0.8em;
+  }
+
+  50% {
+    padding: 0.85em;
+  }
+
+  100% {
+    padding: 0.8em;
+  }
+}
+
+@include animation-frames(rave) {
+  0% {
+    background: red;
+  }
+  25% {
+    background: orange;
+  }
+  50% {
+    background: yellow;
+  }
+  75% {
+    background: green;
+  }
+  100% {
+    background: blue;
+  }
 }
 /* =/Augments
 *************************************************************************/
