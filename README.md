@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [1]: http://notebookandpenguin.com/single-responsibility-bem
 [2]: http://bradfrostweb.com/blog/post/atomic-web-design/
 # Single Responsibility BEM
