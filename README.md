@@ -1,5 +1,6 @@
 [1]: http://notebookandpenguin.com/single-responsibility-bem
 [2]: http://bradfrostweb.com/blog/post/atomic-web-design/
+[3]: http://codepen.io/chatrjr/pen/txwoI
 # Single Responsibility BEM
 
 Single Responsibility BEM is a DRYer way to write BEM-style CSS with Sass. I came up with the concept because I was annoyed with having to repeat the block before an element and modifier. Seriously. Over time, it became a system you can adapt to your workflow for more cohesive, easily maintainable styling and markup.
@@ -234,3 +235,9 @@ As the page flows through its media queries, the styles will be applied. And aga
 ## Conclusion
 
 As always, no system is perfect. The merits of Single Responsibility BEM are yours to explore and adapt in any way you want. I want to help encourage a shift in building out systems for great design.
+
+## Additional Reading
+
+[Atomic Design][2] for a great explanation of why designing from components is the way forward.
+[Single Responsibility BEM][1] for my initial draft of the concepts behind this repo and Pen.
+[Single Responsibility BEM][3] on Codepen to see the ideas in practice.

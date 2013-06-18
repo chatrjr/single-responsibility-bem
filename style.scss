@@ -1,13 +1,3 @@
-/**
- * Single Responsibility BEM: Use your browser's search feature 
- * to find $METHOD to get started. It uses adjoining classes, 
- * which I'm well aware do not work in IE6 (that is, if anyone 
- * is still building for IE6). The downside about the second 
- * modifier method is that @extend didn't work within media 
- * queries, last I checked. The first method is still golden.
- */
-
-/* Also, if you check the output, you'll see there's no bloat to be found. */
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,900,700italic,200,400italic);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css);
 @import "compass";

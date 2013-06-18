@@ -1,14 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,900,700italic,200,400italic);
 @import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.0/css/font-awesome.min.css);
-/**
- * Single Responsibility BEM: Use your browser's search feature 
- * to find $METHOD to get started. It uses adjoining classes, 
- * which I'm well aware do not work in IE6 (that is, if anyone 
- * is still building for IE6). The downside about the second 
- * modifier method is that @extend didn't work within media 
- * queries, last I checked. The first method is still golden.
- */
-/* Also, if you check the output, you'll see there's no bloat to be found. */
 /* Custom mixin to define typographic scale
     Usage: @include scale('l'); 
 */
@@ -50,7 +41,7 @@
 *************************************************************************/
 /* =Pen Styles
 *************************************************************************/
-/* line 183, style.scss */
+/* line 173, style.scss */
 *,
 *:before,
 *:after {
@@ -59,7 +50,7 @@
   box-sizing: border-box;
 }
 
-/* line 189, style.scss */
+/* line 179, style.scss */
 body {
   background: #99d7ff;
   color: #282828;
@@ -68,43 +59,43 @@ body {
   max-width: 80em;
 }
 
-/* line 197, style.scss */
+/* line 187, style.scss */
 h1 {
   font-size: 3em;
   line-height: 1.3125em;
 }
 
-/* line 201, style.scss */
+/* line 191, style.scss */
 h2 {
   font-size: 2.25em;
   line-height: 1.16667em;
 }
 
-/* line 205, style.scss */
+/* line 195, style.scss */
 h3 {
   font-size: 1.875em;
   line-height: 1.4em;
 }
 
-/* line 209, style.scss */
+/* line 199, style.scss */
 h4 {
   font-size: 1.5em;
   line-height: 1.75em;
 }
 
-/* line 213, style.scss */
+/* line 203, style.scss */
 img {
   width: 100%;
 }
 
-/* line 217, style.scss */
+/* line 207, style.scss */
 .container {
   margin: 0 auto;
   max-width: 80em;
   padding: 0 1em;
 }
 
-/* line 224, style.scss */
+/* line 214, style.scss */
 .intro,
 .outro {
   font-size: 1.875em;
@@ -112,11 +103,11 @@ img {
   clear: both;
 }
 
-/* line 229, style.scss */
+/* line 219, style.scss */
 .hero {
   position: relative;
 }
-/* line 232, style.scss */
+/* line 222, style.scss */
 .hero .__pitch {
   background: #0053bd;
   color: white;
@@ -124,32 +115,32 @@ img {
   width: 20em;
 }
 
-/* line 240, style.scss */
+/* line 230, style.scss */
 .info {
   width: 100%;
 }
 
-/* line 244, style.scss */
+/* line 234, style.scss */
 .attributes {
   display: inline-block;
   margin-right: 1%;
   width: 49%;
 }
-/* line 248, style.scss */
+/* line 238, style.scss */
 .attributes:nth-child(2n) {
   margin-right: 0;
 }
-/* line 254, style.scss */
+/* line 244, style.scss */
 .attributes .__list {
   list-style: none;
   padding: 0;
 }
-/* line 257, style.scss */
+/* line 247, style.scss */
 .attributes .__list .__icon {
   margin-right: 0.5em;
 }
 
-/* line 265, style.scss */
+/* line 255, style.scss */
 .examples {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 0.5em;
@@ -157,17 +148,17 @@ img {
   margin-bottom: 1em;
   padding: 0.5em;
 }
-/* line 271, style.scss */
+/* line 261, style.scss */
 .examples:after {
   content: "";
   clear: both;
   display: table;
 }
-/* line 276, style.scss */
+/* line 266, style.scss */
 .examples .__title {
   margin-top: 0;
 }
-/* line 280, style.scss */
+/* line 270, style.scss */
 .examples .__button {
   background: #0053bd;
   color: white;
@@ -178,33 +169,33 @@ img {
   text-decoration: none;
 }
 
-/* line 296, style.scss */
+/* line 286, style.scss */
 .contact {
   float: left;
   width: 48%;
 }
-/* line 300, style.scss */
+/* line 290, style.scss */
 .contact label, .contact .__field {
   display: block;
 }
-/* line 304, style.scss */
+/* line 294, style.scss */
 .contact label {
   font-weight: 700;
   margin: 0.3em 0;
 }
-/* line 309, style.scss */
+/* line 299, style.scss */
 .contact .__field {
   border: 2px solid #0053bd;
   color: #282828;
   padding: 0.2em;
 }
-/* line 318, style.scss */
+/* line 308, style.scss */
 .contact .__button {
   border: none;
   display: block;
 }
 
-/* line 324, style.scss */
+/* line 314, style.scss */
 .block {
   font-size: 1.875em;
   line-height: 1.4em;
@@ -224,7 +215,7 @@ img {
  * Augment classes: layout, state, theme, animate, transition.
  */
 @media screen and (max-width: 30em) {
-  /* line 345, style.scss */
+  /* line 335, style.scss */
   .augment-stateMQ.block {
     /* Referencing %_--shiftBlock */
     background: white;
@@ -232,14 +223,14 @@ img {
   }
 }
 @media screen and (min-width: 30.5em) and (max-width: 50em) {
-  /* line 345, style.scss */
+  /* line 335, style.scss */
   .augment-stateMQ.block {
     /* Referencing %_--shiftBlock */
     box-shadow: 2px 3px 3px #282828;
   }
 }
 @media screen and (min-width: 50.5em) and (max-width: 70em) {
-  /* line 345, style.scss */
+  /* line 335, style.scss */
   .augment-stateMQ.block {
     /* Referencing %_--shiftBlock */
     background: gold;
@@ -247,14 +238,14 @@ img {
   }
 }
 @media screen and (min-width: 70.5em) and (max-width: 90em) {
-  /* line 345, style.scss */
+  /* line 335, style.scss */
   .augment-stateMQ.block {
     /* Referencing %_--shiftBlock */
     border-radius: 1.5em;
   }
 }
 @media screen and (min-width: 90.5em) {
-  /* line 345, style.scss */
+  /* line 335, style.scss */
   .augment-stateMQ.block {
     /* Referencing %_--shiftBlock */
     font-size: 2.25em;
@@ -263,41 +254,41 @@ img {
   }
 }
 
-/* line 374, style.scss */
+/* line 364, style.scss */
 .attributes .__list .augment-statePositive.__icon {
   /* referencing %_--positiveIcon */
   color: green;
 }
 
-/* line 379, style.scss */
+/* line 369, style.scss */
 .attributes .__list .augment-stateNegative.__icon {
   /* referencing %_--negativeIcon */
   color: red;
 }
 
-/* line 384, style.scss */
+/* line 374, style.scss */
 .augment-themeInvert.contact {
   /* referencing %_--inverseForm */
   background: #0053bd;
   border-radius: 0.5em;
   padding: 0.2em;
 }
-/* line 389, style.scss */
+/* line 379, style.scss */
 .augment-themeInvert.contact label {
   color: white;
 }
-/* line 392, style.scss */
+/* line 382, style.scss */
 .augment-themeInvert.contact .__field {
   border-radius: 0 0.5em 0.5em 0;
 }
-/* line 395, style.scss */
+/* line 385, style.scss */
 .augment-themeInvert.contact .__button {
   background: white;
   border-radius: 0 0 0 0.3em;
   color: #0053bd;
 }
 
-/* line 402, style.scss */
+/* line 392, style.scss */
 .examples .augment-animatePulse.__button:hover, .examples .augment-animatePulse.__button:focus {
   /* Referencing %_--pulse */
   -moz-animation: pulse 0.8s infinite ease-out;
@@ -306,7 +297,7 @@ img {
   animation: pulse 0.8s infinite ease-out;
 }
 
-/* line 407, style.scss */
+/* line 397, style.scss */
 .examples .augment-animateRave.__button:hover, .examples .augment-animateRave.__button:focus {
   /* Referencing %_--rave */
   -moz-animation: rave 0.5s infinite ease-in;
@@ -315,7 +306,7 @@ img {
   animation: rave 0.5s infinite ease-in;
 }
 
-/* line 412, style.scss */
+/* line 402, style.scss */
 .contact .augment-transitionFocus.__field:focus {
   /* Referencing %_--focus */
   -webkit-transition: all 0.4s linear;
@@ -328,220 +319,220 @@ img {
 }
 
 @-moz-keyframes pulse {
-  /* line 421, style.scss */
+  /* line 411, style.scss */
   0% {
     padding: 0.8em;
   }
 
-  /* line 425, style.scss */
+  /* line 415, style.scss */
   50% {
     padding: 0.85em;
   }
 
-  /* line 429, style.scss */
+  /* line 419, style.scss */
   100% {
     padding: 0.8em;
   }
 }
 
 @-webkit-keyframes pulse {
-  /* line 421, style.scss */
+  /* line 411, style.scss */
   0% {
     padding: 0.8em;
   }
 
-  /* line 425, style.scss */
+  /* line 415, style.scss */
   50% {
     padding: 0.85em;
   }
 
-  /* line 429, style.scss */
+  /* line 419, style.scss */
   100% {
     padding: 0.8em;
   }
 }
 
 @-o-keyframes pulse {
-  /* line 421, style.scss */
+  /* line 411, style.scss */
   0% {
     padding: 0.8em;
   }
 
-  /* line 425, style.scss */
+  /* line 415, style.scss */
   50% {
     padding: 0.85em;
   }
 
-  /* line 429, style.scss */
+  /* line 419, style.scss */
   100% {
     padding: 0.8em;
   }
 }
 
 @-ms-keyframes pulse {
-  /* line 421, style.scss */
+  /* line 411, style.scss */
   0% {
     padding: 0.8em;
   }
 
-  /* line 425, style.scss */
+  /* line 415, style.scss */
   50% {
     padding: 0.85em;
   }
 
-  /* line 429, style.scss */
+  /* line 419, style.scss */
   100% {
     padding: 0.8em;
   }
 }
 
 @keyframes pulse {
-  /* line 421, style.scss */
+  /* line 411, style.scss */
   0% {
     padding: 0.8em;
   }
 
-  /* line 425, style.scss */
+  /* line 415, style.scss */
   50% {
     padding: 0.85em;
   }
 
-  /* line 429, style.scss */
+  /* line 419, style.scss */
   100% {
     padding: 0.8em;
   }
 }
 
 @-moz-keyframes rave {
-  /* line 435, style.scss */
+  /* line 425, style.scss */
   0% {
     background: red;
   }
 
-  /* line 438, style.scss */
+  /* line 428, style.scss */
   25% {
     background: orange;
   }
 
-  /* line 441, style.scss */
+  /* line 431, style.scss */
   50% {
     background: yellow;
   }
 
-  /* line 444, style.scss */
+  /* line 434, style.scss */
   75% {
     background: green;
   }
 
-  /* line 447, style.scss */
+  /* line 437, style.scss */
   100% {
     background: blue;
   }
 }
 
 @-webkit-keyframes rave {
-  /* line 435, style.scss */
+  /* line 425, style.scss */
   0% {
     background: red;
   }
 
-  /* line 438, style.scss */
+  /* line 428, style.scss */
   25% {
     background: orange;
   }
 
-  /* line 441, style.scss */
+  /* line 431, style.scss */
   50% {
     background: yellow;
   }
 
-  /* line 444, style.scss */
+  /* line 434, style.scss */
   75% {
     background: green;
   }
 
-  /* line 447, style.scss */
+  /* line 437, style.scss */
   100% {
     background: blue;
   }
 }
 
 @-o-keyframes rave {
-  /* line 435, style.scss */
+  /* line 425, style.scss */
   0% {
     background: red;
   }
 
-  /* line 438, style.scss */
+  /* line 428, style.scss */
   25% {
     background: orange;
   }
 
-  /* line 441, style.scss */
+  /* line 431, style.scss */
   50% {
     background: yellow;
   }
 
-  /* line 444, style.scss */
+  /* line 434, style.scss */
   75% {
     background: green;
   }
 
-  /* line 447, style.scss */
+  /* line 437, style.scss */
   100% {
     background: blue;
   }
 }
 
 @-ms-keyframes rave {
-  /* line 435, style.scss */
+  /* line 425, style.scss */
   0% {
     background: red;
   }
 
-  /* line 438, style.scss */
+  /* line 428, style.scss */
   25% {
     background: orange;
   }
 
-  /* line 441, style.scss */
+  /* line 431, style.scss */
   50% {
     background: yellow;
   }
 
-  /* line 444, style.scss */
+  /* line 434, style.scss */
   75% {
     background: green;
   }
 
-  /* line 447, style.scss */
+  /* line 437, style.scss */
   100% {
     background: blue;
   }
 }
 
 @keyframes rave {
-  /* line 435, style.scss */
+  /* line 425, style.scss */
   0% {
     background: red;
   }
 
-  /* line 438, style.scss */
+  /* line 428, style.scss */
   25% {
     background: orange;
   }
 
-  /* line 441, style.scss */
+  /* line 431, style.scss */
   50% {
     background: yellow;
   }
 
-  /* line 444, style.scss */
+  /* line 434, style.scss */
   75% {
     background: green;
   }
 
-  /* line 447, style.scss */
+  /* line 437, style.scss */
   100% {
     background: blue;
   }
