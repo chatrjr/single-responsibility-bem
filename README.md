@@ -1,4 +1,4 @@
-[1]: http://chatrjr.github.io/2013/06/14/single-responsibility-bem/
+[1]: http://chatrjr.name/2013/06/single-responsibility-bem/
 [2]: http://bradfrostweb.com/blog/post/atomic-web-design/
 [3]: http://codepen.io/chatrjr/pen/txwoI
 # Single Responsibility BEM
